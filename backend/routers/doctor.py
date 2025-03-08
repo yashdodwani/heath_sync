@@ -27,7 +27,7 @@ async def medical_query(query_data: MedicalQuery):
     Endpoint to process medical queries and provide personalized responses.
 
     - Accepts a medical query text and optional conversation history
-    - Returns personalized medical advice and recommendations
+    - Returns personalized medical advice, recommendations, and suggested doctors
     """
     try:
         # Process the query with AI service

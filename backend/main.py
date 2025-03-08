@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Import routers
-from routers import compounder, doctor, dietician #, gymtrainer
+from routers import compounder, doctor, dietician, gymtrainer
 from database.mongodb import connect_to_mongo, close_mongo_connection
 
 # Create FastAPI app
@@ -28,7 +28,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(compounder.router, prefix="/api/compounder", tags=["compounder"])
-#app.include_router(gymtrainer.router, prefix="/api/gymtrainer", tags=["gymtrainer"])
+app.include_router(gymtrainer.router, prefix="/api/gymtrainer", tags=["gymtrainer"])
 app.include_router(doctor.router, prefix="/api/doctor", tags=["doctor"])
 app.include_router(dietician.router, prefix="/api/dietician", tags=["dietician"])
 
